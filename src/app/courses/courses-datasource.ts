@@ -6,31 +6,22 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 // TODO: Replace this with your own data model type
 export interface CoursesItem {
   name: string;
+  weeks: number;
   id: number;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: CoursesItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+  {id: 1, weeks: 2, name: 'Html'},
+  {id: 2, weeks: 5, name: 'Css'},
+  {id: 3, weeks: 6, name: 'Javascript'},
+  {id: 4, weeks: 5, name: 'Typescript'},
+  {id: 5, weeks: 5, name: 'Angular'},
+  {id: 6, weeks: 8, name: 'React'},
+  {id: 7, weeks: 5, name: 'ASP.Net Core'},
+  {id: 8, weeks: 8, name: 'Docker'},
+  {id: 9, weeks: 5, name: 'SQL Server'},
+  {id: 10, weeks: 9, name: 'Azure'}
 ];
 
 /**
@@ -95,6 +86,7 @@ export class CoursesDataSource extends DataSource<CoursesItem> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
+        case 'weeks': return compare(+a.weeks, +b.weeks, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }

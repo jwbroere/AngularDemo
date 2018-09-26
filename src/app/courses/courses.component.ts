@@ -13,7 +13,7 @@ export class CoursesComponent implements OnInit {
   dataSource: CoursesDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['weeks', 'name'];
 
   ngOnInit() {
     this.dataSource = new CoursesDataSource(this.paginator, this.sort);
