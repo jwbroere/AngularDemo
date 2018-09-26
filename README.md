@@ -18,3 +18,7 @@ ps> ng add @angular/material
 ```console
 ps> ng g @angular/material:material-nav --name nav
 ```
+
+```console
+ps> ng g @angular/material:material-dashboard --name dashboard
+```
