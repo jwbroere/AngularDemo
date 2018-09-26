@@ -22,3 +22,8 @@ ps> ng g @angular/material:material-nav --name nav
 ```console
 ps> ng g @angular/material:material-dashboard --name dashboard
 ```
+
+```console
+ps> ng g @angular/material:material-table --name courses
+ps> ng g @angular/material:material-table --name students
+```
